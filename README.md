@@ -8,7 +8,7 @@
 
 
 
-### Files used:
+### Used files in the project:
 chicago.csv
 new_york_city.csv
 washington.csv
