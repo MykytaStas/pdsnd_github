@@ -67,9 +67,9 @@ def time_stats(df):
     common_month = int(df['Month'].mode()[0])
     months=['January','February','March','April','May','June']
 
-    print("The most common month:\n",months[common_month-1],"\n")
-    print("The most common day of week:\n",days[common_day-1],"\n")
-    print("The most common start hour:\n",df['Hour'].mode()[0],"\n")
+    print("The most common month:\n{}\n".format(months[common_month-1]))
+    print("The most common day of week:\n{}\n".format(days[common_day-1]))
+    print("The most common start hour:\n{}\n".format(df['Hour'].mode()[0]))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -80,8 +80,8 @@ def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
-    print("The most commonly used start station:\n",df['Start Station'].mode()[0],"\n")
-    print("The most commonly used end station:\n",df['End Station'].mode()[0],"\n")
+    print("The most commonly used start station:\n{}\n".format(df['Start Station'].mode()[0]))
+    print("The most commonly used end station:\n{}\n".format(df['End Station'].mode()[0]))
     print("The most frequent combination of start station and end station trip:\n1)",(df['Start Station'] + '; 2) ' + df['End Station']).mode()[0])
 
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -93,8 +93,8 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
-    print("Total duration:\n",df["Trip Duration"].sum()/3600,"hours\n")
-    print("Mean duration:\n",df["Trip Duration"].mean()/3600*60,"minutes\n")
+    print("Total duration:\n{} hours\n".format(df["Trip Duration"].sum()/3600))
+    print("Mean duration:\n{} minutes\n".format(df["Trip Duration"].mean()/3600*60))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -105,11 +105,11 @@ def user_stats(df):
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
-    print("Counts of user types:\n",df["User Type"].value_counts(),"\n")
-    print("Counts of gender:\n",df["Gender"].value_counts(),"\n")
-    print("Earliest year of birth\n",df["Birth Year"].astype(int).min(),"\n")
-    print("Most recent year of birth\n",df["Birth Year"].astype(int).max(),"\n")
-    print("Most common year of birth\n",df["Birth Year"].astype(int).mode()[0],"\n")
+    print("Counts of user types:\n{}\n".format(df["User Type"].value_counts()))
+    print("Counts of gender:\n{}\n".format(df["Gender"].value_counts()))
+    print("Earliest year of birth\n{}\n".format(df["Birth Year"].astype(int).min()))
+    print("Most recent year of birth\n{}\n".format(df["Birth Year"].astype(int).max()))
+    print("Most common year of birth\n{}\n".format(df["Birth Year"].astype(int).mode()[0]))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
