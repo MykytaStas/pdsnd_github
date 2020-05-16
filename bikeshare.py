@@ -20,7 +20,7 @@ def get_filters():
 
     print('Hello! Let\'s explore some US bikeshare data!')
     city=input("Enter name of the city to analyze (chicago, new york city or washington): ").lower()
-    month=input("Enter a month (all, january, february, ... , june) to filter by: ").lower()
+    month=input("Enter a month (all, january, february, march, april,may, june) to filter by: ").lower()
     day=int(input("Enter weekday number (1-7) or 0 for all days: "))
 
     return city, month, day
