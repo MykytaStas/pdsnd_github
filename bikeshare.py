@@ -4,7 +4,7 @@ import numpy as np
 
 pd.set_option('display.max_columns', 500)
 
-CITY_DATA = { 'chicago': 'chicago.csv',
+city_data = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
@@ -37,7 +37,7 @@ def load_data(city, month, day):
         df - Pandas DataFrame containing city data filtered by month and day
     """
 
-    df= pd.read_csv(CITY_DATA[city])
+    df= pd.read_csv(city_data[city])
     df=df.fillna(method = 'backfill', axis = 0)
 
     df['Start Time'] = pd.to_datetime(df['Start Time'])
